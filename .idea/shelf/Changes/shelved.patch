@@ -1,0 +1,289 @@
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1680863984979)
++++ b/.idea/.gitignore	(date 1680863984979)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: src/main/java/login/login.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/login/login.java b/src/main/java/login/login.java
+new file mode 100644
+--- /dev/null	(date 1680966598449)
++++ b/src/main/java/login/login.java	(date 1680966598449)
+@@ -0,0 +1,97 @@
++package login;
++
++
++import io.github.bonigarcia.wdm.WebDriverManager;
++import org.openqa.selenium.By;
++import org.openqa.selenium.WebDriver;
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.chrome.ChromeDriver;
++import org.openqa.selenium.firefox.FirefoxDriver;
++import org.openqa.selenium.support.ui.Select;
++
++import java.util.concurrent.TimeUnit;
++
++
++public class login {
++    public static void main(String[] args) {
++        WebDriverManager.firefoxdriver().setup();
++        WebDriver driver=new FirefoxDriver();
++
++        driver.get("https://swinji.azurewebsites.net");
++        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
++
++        WebElement Emailtextbox = driver.findElement(By.xpath("//input[@id='Email']"));
++       Emailtextbox.sendKeys("testregister@aaa.com");
++
++        WebElement passwordtextbox = driver.findElement(By.xpath("//input[@id='inputPassword']"));
++        passwordtextbox.sendKeys("Wakram_123");
++
++        WebElement loginbutton= driver.findElement(By.id("btnLogin"));
++        loginbutton.click();
++
++        WebElement courses = driver.findElement(By.xpath("//a[@id='btnMyCoursesList']"));
++        courses.click();
++
++WebElement addcoursesbutton= driver.findElement(By.id("btnListAddCourse"));
++addcoursesbutton.click();
++
++WebElement coursename= driver.findElement(By.name("courseName"));
++coursename.sendKeys("abdelrahman course");
++
++        WebElement courseSubject=driver.findElement(By.xpath("//select[@id='courseSubject']"));
++        Select courseSubjectvalue=new Select(courseSubject);
++        courseSubjectvalue.selectByIndex(3);
++
++        WebElement courseGrade=driver.findElement(By.id("courseGrade"));
++        Select coursGradvalue=new Select(courseGrade);
++        coursGradvalue.selectByIndex(4);
++
++
++
++    WebElement coursStingclick= driver.findElement(By.xpath("//body/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/fieldset[1]/div[4]/div[2]/div[5]/div[2]/div[1]/label[1]"));
++  coursStingclick.click();
++
++ driver.findElement(By.xpath("//body/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/fieldset[1]/div[5]/div[1]/h4[1]")).click();
++     WebElement coursetype= driver.findElement(By.xpath("//div[@id='divCourseTypedropdown']"));
++     coursetype.click();
++     driver.findElement(By.xpath("//body/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/fieldset[1]/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]")).click();
++
++WebElement Enabllearningchekbox= driver.findElement(By.id("lblLearningPath"));
++Enabllearningchekbox.click();
++
++        WebElement Enabllokingchekbox= driver.findElement(By.id("lblSessionsSequentiallyLocked"));
++        Enabllokingchekbox.click();
++
++        WebElement studentlearnobjective= driver.findElement(By.id("lblQuizAchievementCoverageType"));
++        studentlearnobjective.click();
++
++WebElement EnableCourseTrial= driver.findElement(By.id("lblResetCourse"));
++EnableCourseTrial.click();
++
++driver.findElement(By.id("resetCourseCount")).clear();
++        driver.findElement(By.id("resetCourseCount")).sendKeys("5");
++
++    WebElement VideobasedClick=  driver.findElement(By.xpath("//h4[contains(text(),'Video-Based Course Settings')]"));
++    VideobasedClick.click();
++
++WebElement EnableplayVideoOption= driver.findElement(By.id("lblPlayCourse"));
++EnableplayVideoOption.click();
++
++WebElement Create = driver.findElement(By.id("btnSaveAsDraftCourse"));
++Create.click();
++driver.findElement(By.xpath("//body/div[1]/aside[1]/div[1]/div[2]/em[1]")).click();
++driver.findElement(By.id("btnMyCoursesList")).click();
++WebElement search= driver.findElement(By.id("txtCourseSearch"));
++search.sendKeys("abdelrahman");
++WebElement btncoursesearch= driver.findElement(By.id("btnCourseSearch"));
++btncoursesearch.click();
++
++
++
++}
++
++}
++
++
++
++
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+new file mode 100644
+--- /dev/null	(date 1680864022494)
++++ b/.idea/encodings.xml	(date 1680864022494)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Encoding">
++    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
++  </component>
++</project>
+\ No newline at end of file
+Index: src/main/java/org/example/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/Main.java b/src/main/java/org/example/Main.java
+new file mode 100644
+--- /dev/null	(date 1680863975513)
++++ b/src/main/java/org/example/Main.java	(date 1680863975513)
+@@ -0,0 +1,19 @@
++package org.example;
++
++// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
++// then press Enter. You can now see whitespace characters in your code.
++public class Main {
++    public static void main(String[] args) {
++        // Press Alt+Enter with your caret at the highlighted text to see how
++        // IntelliJ IDEA suggests fixing it.
++        System.out.printf("Hello and welcome!");
++
++        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
++        for (int i = 1; i <= 5; i++) {
++
++            // Press Shift+F9 to start debugging your code. We have set one breakpoint
++            // for you, but you can always add more by pressing Ctrl+F8.
++            System.out.println("i = " + i);
++        }
++    }
++}
+\ No newline at end of file
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+--- /dev/null	(date 1680863975501)
++++ b/.gitignore	(date 1680863975501)
+@@ -0,0 +1,38 @@
++target/
++!.mvn/wrapper/maven-wrapper.jar
++!**/src/main/**/target/
++!**/src/test/**/target/
++
++### IntelliJ IDEA ###
++.idea/modules.xml
++.idea/jarRepositories.xml
++.idea/compiler.xml
++.idea/libraries/
++*.iws
++*.iml
++*.ipr
++
++### Eclipse ###
++.apt_generated
++.classpath
++.factorypath
++.project
++.settings
++.springBeans
++.sts4-cache
++
++### NetBeans ###
++/nbproject/private/
++/nbbuild/
++/dist/
++/nbdist/
++/.nb-gradle/
++build/
++!**/src/main/**/build/
++!**/src/test/**/build/
++
++### VS Code ###
++.vscode/
++
++### Mac OS ###
++.DS_Store
+\ No newline at end of file
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+new file mode 100644
+--- /dev/null	(date 1680869980832)
++++ b/pom.xml	(date 1680869980832)
+@@ -0,0 +1,36 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project xmlns="http://maven.apache.org/POM/4.0.0"
++         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++    <modelVersion>4.0.0</modelVersion>
++
++    <groupId>org.example</groupId>
++    <artifactId>task</artifactId>
++    <version>1.0-SNAPSHOT</version>
++
++    <properties>
++        <maven.compiler.source>19</maven.compiler.source>
++        <maven.compiler.target>19</maven.compiler.target>
++        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
++    </properties>
++<dependencies>
++    <dependency>
++        <groupId>org.seleniumhq.selenium</groupId>
++        <artifactId>selenium-java</artifactId>
++        <version>4.8.0</version>
++    </dependency>
++    <dependency>
++        <groupId>io.github.bonigarcia</groupId>
++        <artifactId>webdrivermanager</artifactId>
++        <version>5.3.2</version>
++        <scope>test</scope>
++    </dependency>
++    <dependency>
++        <groupId>io.github.bonigarcia</groupId>
++        <artifactId>webdrivermanager</artifactId>
++        <version>5.3.2</version>
++        <scope>compile</scope>
++    </dependency>
++</dependencies>
++
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1680863979234)
++++ b/.idea/misc.xml	(date 1680863979234)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="MavenProjectsManager">
++    <option name="originalFiles">
++      <list>
++        <option value="$PROJECT_DIR$/pom.xml" />
++      </list>
++    </option>
++  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="19" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
